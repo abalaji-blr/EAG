@@ -16,6 +16,8 @@ Refer to file [talk2cmp-2.py](./talk2cmp-2.py) for the Orchestractor which direc
 $ python3 ./talk2mcp-2.py
 
 ## Output / Log file
+Refer to this [file](./log) for the complete log information.
+
 ```
 Starting main execution...
 Establishing connection to MCP server...
