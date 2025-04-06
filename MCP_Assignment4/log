@@ -1,9 +1,13 @@
+Processing request of type ListToolsRequest
+Processing request of type CallToolRequest
+Processing request of type CallToolRequest
+Processing request of type CallToolRequest
+Processing request of type CallToolRequest
 Starting main execution...
 Establishing connection to MCP server...
 Connection established, creating session...
 Session created, initializing...
 Requesting tool list...
-Processing request of type ListToolsRequest
 Successfully retrieved 22 tools
 Creating system prompt...
 Number of tools: 22
@@ -40,7 +44,7 @@ Draws a rectangle in an already opened Pages document with specified width and h
 
 Args:
     width: The width of the rectangle in points.
-   height: The height of the rectangle in points.
+    height: The height of the rectangle in points.
 
 Successfully created tools description
 Created system prompt...
@@ -62,7 +66,6 @@ DEBUG: Schema properties: {'string': {'title': 'String', 'type': 'string'}}
 DEBUG: Converting parameter string with value INDIA to type string
 DEBUG: Final arguments: {'string': 'INDIA'}
 DEBUG: Calling tool strings_to_chars_to_int
-Processing request of type CallToolRequest
 DEBUG: Raw result: meta=None content=[TextContent(type='text', text='73', annotations=None), TextContent(type='text', text='78', annotations=None), TextContent(type='text', text='68', annotations=None), TextContent(type='text', text='73', annotations=None), TextContent(type='text', text='65', annotations=None)] isError=False
 DEBUG: Result has content attribute
 DEBUG: Final iteration result: ['73', '78', '68', '73', '65']
@@ -83,18 +86,11 @@ DEBUG: Schema properties: {'int_list': {'items': {}, 'title': 'Int List', 'type'
 DEBUG: Converting parameter int_list with value [73, 78, 68, 73, 65] to type array
 DEBUG: Final arguments: {'int_list': [73, 78, 68, 73, 65]}
 DEBUG: Calling tool int_list_to_exponential_sum
-Processing request of type CallToolRequest
 DEBUG: Raw result: meta=None content=[TextContent(type='text', text='7.59982224609308e+33', annotations=None)] isError=False
 DEBUG: Result has content attribute
 DEBUG: Final iteration result: ['7.59982224609308e+33']
 
 --- Iteration 3 ---
-Preparing to generate LLM response...
-Starting LLM generation...
-LLM generation completed
-LLM Response: FINAL_ANSWER: [7.59982224609308e+33]
-
---- Iteration 4 ---
 Preparing to generate LLM response...
 Starting LLM generation...
 LLM generation completed
@@ -109,10 +105,30 @@ DEBUG: Tool schema: {'properties': {}, 'title': 'open_new_pages_documentArgument
 DEBUG: Schema properties: {}
 DEBUG: Final arguments: {}
 DEBUG: Calling tool open_new_pages_document
-Processing request of type CallToolRequest
 DEBUG: Raw result: meta=None content=[TextContent(type='text', text='{"content": [{"type": "text", "text": "Pages opened and a new document created successfully.", "annotations": null}]}', annotations=None)] isError=False
 DEBUG: Result has content attribute
 DEBUG: Final iteration result: ['{"content": [{"type": "text", "text": "Pages opened and a new document created successfully.", "annotations": null}]}']
+
+--- Iteration 4 ---
+Preparing to generate LLM response...
+Starting LLM generation...
+LLM generation completed
+LLM Response: FUNCTION_CALL: draw_rectangle_in_existing_pages|100|100
+
+DEBUG: Raw function info:  draw_rectangle_in_existing_pages|100|100
+DEBUG: Split parts: ['draw_rectangle_in_existing_pages', '100', '100']
+DEBUG: Function name: draw_rectangle_in_existing_pages
+DEBUG: Raw parameters: ['100', '100']
+DEBUG: Found tool: draw_rectangle_in_existing_pages
+DEBUG: Tool schema: {'properties': {'width': {'default': 700, 'title': 'width', 'type': 'string'}, 'height': {'default': 700, 'title': 'height', 'type': 'string'}}, 'title': 'draw_rectangle_in_existing_pagesArguments', 'type': 'object'}
+DEBUG: Schema properties: {'width': {'default': 700, 'title': 'width', 'type': 'string'}, 'height': {'default': 700, 'title': 'height', 'type': 'string'}}
+DEBUG: Converting parameter width with value 100 to type string
+DEBUG: Converting parameter height with value 100 to type string
+DEBUG: Final arguments: {'width': '100', 'height': '100'}
+DEBUG: Calling tool draw_rectangle_in_existing_pages
+DEBUG: Raw result: meta=None content=[TextContent(type='text', text='{"content": [{"type": "text", "text": "Rectangle drawn in existing Pages document (width: {width}, height: {height}).", "annotations": null}]}', annotations=None)] isError=False
+DEBUG: Result has content attribute
+DEBUG: Final iteration result: ['{"content": [{"type": "text", "text": "Rectangle drawn in existing Pages document (width: {width}, height: {height}).", "annotations": null}]}']
 
 --- Iteration 5 ---
 Preparing to generate LLM response...
@@ -125,13 +141,12 @@ DEBUG: Split parts: ['add_text_to_pages_document', '7.59982224609308e+33']
 DEBUG: Function name: add_text_to_pages_document
 DEBUG: Raw parameters: ['7.59982224609308e+33']
 DEBUG: Found tool: add_text_to_pages_document
-DEBUG: Tool schema: {'properties': {'text_to_add': {'default': 'Additional Text', 'title': 'text_to_add', 'type': 'string'}}, 'title': 'add_text_to_pages_documentArguments', 'type': 'object'}
+DEBUG: Tool schema: {'properties': {'text_to_add': {'default': 'Additional Text', 'title': 'text_to_add', 'type': 'string'}}, 'title': 'add_text_to_pages_documentArguments', 'type': 'object'}Processing request of type CallToolRequest
+
 DEBUG: Schema properties: {'text_to_add': {'default': 'Additional Text', 'title': 'text_to_add', 'type': 'string'}}
 DEBUG: Converting parameter text_to_add with value 7.59982224609308e+33 to type string
 DEBUG: Final arguments: {'text_to_add': '7.59982224609308e+33'}
 DEBUG: Calling tool add_text_to_pages_document
-Processing request of type CallToolRequest
 DEBUG: Raw result: meta=None content=[TextContent(type='text', text='{"content": [{"type": "text", "text": "Added text to pages document.", "annotations": null}]}', annotations=None)] isError=False
 DEBUG: Result has content attribute
 DEBUG: Final iteration result: ['{"content": [{"type": "text", "text": "Added text to pages document.", "annotations": null}]}']
-==
