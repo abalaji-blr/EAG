@@ -481,9 +481,9 @@ def draw_rectangle_in_existing_pages(width=700, height=700):
                 tell application "Pages"
                     tell the front document
                         tell the last shape --The most recently added shape.
-                            set its width to {width}
-                            set its height to {height}
-                            set its stroke width to 2 -- Border width
+                            set its width to 200
+                            set its height to 100
+                            --set its stroke width to 2 -- Border width
                         end tell
                     end tell
                 end tell
@@ -491,7 +491,60 @@ def draw_rectangle_in_existing_pages(width=700, height=700):
         end tell
         """
 
-        applescript.run(script)
+#        script2 = f'''
+#        tell application "Pages"
+#	    activate
+#    	    delay 1
+#    	    tell front document
+#            set thePage to page 1
+#            set newShape to make new shape at end of thePage with properties {shape type:rectangle, width:200, height:100}
+#    	    end tell
+#        end tell
+#        '''
+
+        script3 = f"""
+tell application "Pages"
+    activate
+    delay 1
+    tell front document
+        set thePage to page 1
+        set newShape to make new shape at end of thePage
+        set the width of newShape to 200
+        set the height of newShape to 100
+    end tell
+end tell
+"""
+        script4 = f"""
+tell application "Pages"
+    activate
+    delay 1
+    tell the front document
+        set newShape to make new shape at end with properties {{ |shape type|:rectangle }}
+        tell newShape
+            set its width to 200
+            set its height to 100
+            -- Uncomment the following line if you want to set stroke width:
+            -- set its stroke width to 2
+        end tell
+    end tell
+end tell
+"""
+        script5 = f"""
+tell application "Pages" to activate
+delay 0.5
+
+-- Insert Rectangle
+tell application "System Events"
+        tell process "Pages"
+                set frontmost to true
+                click menu item "Rectangle" of menu "Shape" of menu item "Shape" of menu "Insert" of menu bar 1
+        end tell
+end tell
+
+delay 1
+"""
+
+        applescript.run(script5)
 
         print(f"Rectangle drawn in existing Pages document (width: {width}, height: {height}).")
         return {
