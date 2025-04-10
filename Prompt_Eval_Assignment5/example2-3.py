@@ -529,7 +529,22 @@ tell application "Pages"
     end tell
 end tell
 """
-        applescript.run(script4)
+
+        script5 = f"""
+tell application "Pages" to activate
+delay 0.5
+
+-- Insert Rectangle
+tell application "System Events"
+	tell process "Pages"
+		set frontmost to true
+		click menu item "Rectangle" of menu "Shape" of menu item "Shape" of menu "Insert" of menu bar 1
+	end tell
+end tell
+
+delay 1
+"""
+        applescript.run(script5)
 
         print(f"Rectangle drawn in existing Pages document (width: {width}, height: {height}).")
         return {
