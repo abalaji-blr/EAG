@@ -7,6 +7,12 @@ Redo the MCP assignment (#4), evaluate the prompts using the prompt evaluator, a
 Click the following link for the [prompt evaluator](./prompt_of_prompts.md) using any LLM.
 
 ---
+## Demo
+
+[![Watch the Demo](https://img.youtube.com/vi/a31ZPl43ZWY/0.jpg)](https://www.youtube.com/watch?v=a31ZPl43ZWY)
+
+
+---
 
 ## Prompts
 * **Original System Prompt:**
