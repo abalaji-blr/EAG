@@ -85,5 +85,7 @@ The complete log file is available [here](./log.log).
 
 ## Demo
 
+[![Watch the Demo](https://img.youtube.com/vi/w_8DQ9sAF84/0.jpg)](https://www.youtube.com/w_8DQ9sAF84)
+
 ---
 
