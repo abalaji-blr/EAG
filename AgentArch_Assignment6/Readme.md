@@ -79,4 +79,11 @@ Text Style:
 Enter your preference (number): 1
 
 ```
- 
+
+## Output
+The complete log file is available [here](./log.log).
+
+## Demo
+
+---
+
