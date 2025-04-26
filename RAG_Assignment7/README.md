@@ -25,8 +25,22 @@ To install, follow the command:
 pip install sentence_transformers
 ```
 
-## About FAISS - Vector Database
+## What is FAISS?
+FAISS (**Facebook AI Similarity Search**) is an open-source library by Meta AI designed for **fast and efficient similarity search across large collections of vector data**.
+Based on their embeddings, it helps you find the most similar items (like documents or images).
 
+When you **turn text into embeddings (vectors)**, you need a way to **search for the most similar vectors** — that's where FAISS comes in.
+
+It can:
+* Index millions of vectors efficiently
+* Support nearest neighbor search (cosine or Euclidean)
+* Use CPU or GPU for lightning-fast performance
+* Power semantic search, RAG, recommendation systems, etc.
+
+You can install, by following the below command:
+```
+pip install faiss-cpu
+```
 ## Code 
 
 ## Demo
