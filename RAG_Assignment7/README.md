@@ -41,6 +41,8 @@ You can install, by following the below command:
 ```
 pip install faiss-cpu
 ```
+The FAISS index table/database was generated using the [collab python script](./FAISS_IndexGen/buildindexusingnomic.py).
+
 ## Code 
 
 ## Demo
