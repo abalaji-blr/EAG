@@ -1,0 +1,8 @@
+flask
+pydantic
+faiss-cpu  # or faiss-gpu if you have the hardware and setup
+nomic
+torch
+sentence-transformers # Nomic might depend on this or similar
+requests
+beautifulsoup4

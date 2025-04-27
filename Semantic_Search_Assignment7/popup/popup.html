@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Semantic Search</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Semantic Search</h1>
+    
+    <div class="search-box">
+      <input type="text" id="search-input" placeholder="Search your browsing history...">
+      <button id="search-button">Search</button>
+    </div>
+    
+    <div class="status-bar">
+      <span id="indexed-count">0</span> pages indexed
+    </div>
+    
+    <div id="results-container">
+      <!-- Search results will be inserted here -->
+    </div>
+    
+    <div class="controls">
+      <button id="build-index">Build Index Now</button>
+      <button id="open-settings">Settings</button>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
