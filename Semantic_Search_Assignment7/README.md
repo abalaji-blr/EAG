@@ -45,4 +45,4 @@ pip install faiss-cpu
 * The FAISS index file was generated using Collab. Follow the link for the [Python notebook](./FAISS_IndexGen/BuildIndexUsingNomic.ipynb)
   
 ## Demo
-
+[![Watch the video](https://img.youtube.com/vi/A2OZp4i2or8/1.jpg)](https://youtu.be/A2OZp4i2or8)
