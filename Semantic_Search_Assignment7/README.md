@@ -37,11 +37,12 @@ It can:
 * Use CPU or GPU for lightning-fast performance
 * Power semantic search, RAG, recommendation systems, etc.
 
-You can install, by following the below command:
+You can install by following the command below:
 ```
 pip install faiss-cpu
 ```
 ## Code 
-
+* The FAISS index file was generated using Collab. Follow the link for the [Python notebook](./FAISS_IndexGen/BuildIndexUsingNomic.ipynb)
+  
 ## Demo
 
