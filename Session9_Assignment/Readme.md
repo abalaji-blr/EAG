@@ -167,5 +167,9 @@ Start with the code shared. Your task is: <br>
       💡 Final Answer: [('session', 21), ('agents', 14), ('students', 6)]
 
       ```
+### Heuristics that run on the query and results
 
+### Indexing your Past Historical Conversation for Agent
+
+### Optimizing decision_prompt_conservative.txt
    
