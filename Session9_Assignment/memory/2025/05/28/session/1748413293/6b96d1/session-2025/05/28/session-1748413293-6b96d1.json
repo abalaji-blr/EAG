@@ -1,0 +1,36 @@
+[
+  {
+    "timestamp": 1748413293.296926,
+    "type": "run_metadata",
+    "text": "Started new session with input:  at 2025-05-28T06:21:33.296930",
+    "tool_name": null,
+    "tool_args": null,
+    "tool_result": null,
+    "final_answer": null,
+    "tags": [
+      "run_start"
+    ],
+    "success": null,
+    "metadata": {
+      "start_time": "2025-05-28T11:51:33.297457",
+      "step": 0
+    }
+  },
+  {
+    "timestamp": 1748413324.4388359,
+    "type": "run_metadata",
+    "text": "Started new session with input: Find the ASCII values of characters in INDIA and then return sum of exponentials of those values. at 2025-05-28T06:22:04.438838",
+    "tool_name": null,
+    "tool_args": null,
+    "tool_result": null,
+    "final_answer": null,
+    "tags": [
+      "run_start"
+    ],
+    "success": null,
+    "metadata": {
+      "start_time": "2025-05-28T11:52:04.438850",
+      "step": 0
+    }
+  }
+]

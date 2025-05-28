@@ -1,0 +1,36 @@
+[
+  {
+    "timestamp": 1748257203.4731,
+    "type": "run_metadata",
+    "text": "Started new session with input: What do you know about Don Tapscott and Anthony Williams? at 2025-05-26T11:00:03.473107",
+    "tool_name": null,
+    "tool_args": null,
+    "tool_result": null,
+    "final_answer": null,
+    "tags": [
+      "run_start"
+    ],
+    "success": null,
+    "metadata": {
+      "start_time": "2025-05-26T16:30:03.473640",
+      "step": 0
+    }
+  },
+  {
+    "timestamp": 1748257665.260782,
+    "type": "run_metadata",
+    "text": "Started new session with input:  at 2025-05-26T11:07:45.260787",
+    "tool_name": null,
+    "tool_args": null,
+    "tool_result": null,
+    "final_answer": null,
+    "tags": [
+      "run_start"
+    ],
+    "success": null,
+    "metadata": {
+      "start_time": "2025-05-26T16:37:45.260803",
+      "step": 0
+    }
+  }
+]

@@ -1,0 +1,19 @@
+[
+  {
+    "timestamp": 1748414495.352158,
+    "type": "run_metadata",
+    "text": "Started new session with input: [12:09:48] [perception] \u26a0\ufe0f Perception failed: object GenerateContentResponse can't be used in 'await' expression at 2025-05-28T06:41:35.352163",
+    "tool_name": null,
+    "tool_args": null,
+    "tool_result": null,
+    "final_answer": null,
+    "tags": [
+      "run_start"
+    ],
+    "success": null,
+    "metadata": {
+      "start_time": "2025-05-28T12:11:35.352181",
+      "step": 0
+    }
+  }
+]
