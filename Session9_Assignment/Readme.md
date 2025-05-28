@@ -11,13 +11,16 @@ Start with the code shared. Your task is
 ## Submission
 1. The error was for the queries - the tool always gets into FURTHER_PROCESSING_REQUIRED. So, the fix is in loop.py,
    along with the user_input provide **user_input_override**. This will help in multi-step iterative processing.
-   The following are the outputs for the queries.
-   1. Find the ASCII values of characters in INDIA and then return sum of exponentials of those values.
+   
+   The code changes are [available here](./core/loop.py). <br>
+   
+   The following are the outputs for the queries. <br>
+   1. Find the ASCII values of characters in INDIA and then return sum of exponentials of those values.<br>
       The Complete [log file is available here](./log/q1.log).
       ```
       Final Answer: 7.599822246093079e+33
       ```
-   2. How much Anmol singh paid for his DLF apartment via Capbridge?
+   2. How much Anmol singh paid for his DLF apartment via Capbridge? <br>
       The complete [log file is available here](./log/q2.log)
       ```
       [plan] import json
@@ -37,14 +40,32 @@ Start with the code shared. Your task is
       
       💡 Final Answer: 42.94 crore
       ```
-   4. What do you know about Don Tapscott and Anthony Williams?
-   5. What is the relationship between Gensol and Go-Auto?
-   6. which course are we teaching on Canvas LMS? "/Users/abalaji/mydata/EAG/Session9/S9/documents/How to use Canvas LMS.pdf"
-   7. Summarize this page: https://theschoolof.ai/
-   8. What is the log value of the amount that Anmol singh paid for his DLF apartment via Capbridge? 
+   3. What do you know about Don Tapscott and Anthony Williams? <br>
+      The complete [log file is available here](./log/q3.log).
+      ```
+      [loop] Detected solve() plan — running sandboxed...
+      [action] 🔍 Entered run_python_sandbox()
+      [05/28/25 17:59:27] INFO     Processing request of type CallToolRequest                                                   
+      [05/28/25 17:59:28] INFO     HTTP Request: POST https://html.duckduckgo.com/html "HTTP/1.1 200 OK"                                                                                            
+      Final Answer: Don Tapscott and Anthony Williams are best known for co-authoring the book Wikinomics: How Mass Collaboration Changes    Everything.
+      ```
+   4. What is the relationship between Gensol and Go-Auto? <br>
+      The Complete [log file is available here](./log/q4.log).
+      
+      ```
+      [loop] Detected solve() plan — running sandboxed...
+      [action] 🔍 Entered run_python_sandbox()
+      [05/28/25 18:00:48] INFO     Processing request of type CallToolRequest                                                                                                                        server.py:551
+      [05/28/25 18:00:50] INFO     HTTP Request: POST https://html.duckduckgo.com/html "HTTP/1.1 200 OK"                                                                                           _client.py:1740
 
-   9. Find the sum of all even number in the fibonacci sequence up to the 10th term.
-   10. What is the current year and how many days are in it? 
-   11. Take the first paragraph of the School of AI website, count the frequency of each word, and identify the three most common words that       are longer than 4 letters. www.theschoolof.ai
+      💡 Final Answer: Gensol and Go-Auto are related through business dealings involving the purchase of EVs. Go-Auto supplied EVs to Gensol. There are also indications of financial irregularities and funds moving between the two companies.
+      ```
+   7. which course are we teaching on Canvas LMS? "/Users/abalaji/mydata/EAG/Session9/S9/documents/How to use Canvas LMS.pdf"
+   8. Summarize this page: https://theschoolof.ai/
+   9. What is the log value of the amount that Anmol singh paid for his DLF apartment via Capbridge? 
+
+   10. Find the sum of all even number in the fibonacci sequence up to the 10th term.
+   11. What is the current year and how many days are in it? 
+   12. Take the first paragraph of the School of AI website, count the frequency of each word, and identify the three most common words that       are longer than 4 letters. www.theschoolof.ai
 
    
