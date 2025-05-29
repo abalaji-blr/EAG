@@ -12,7 +12,7 @@ Start with the code shared. Your task is: <br>
 1. The error was for the queries - the tool always gets into FURTHER_PROCESSING_REQUIRED. So, the fix is in loop.py,
    along with the user_input provide **user_input_override**. This will help in multi-step iterative processing.
    
-   The code changes are [available here](./core/loop.py). <br>
+   The code changes are [available here](./core/loop.py#L178). <br>
    
    The following are the outputs for the queries. <br>
    1. Find the ASCII values of characters in INDIA and then return sum of exponentials of those values.<br>
