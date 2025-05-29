@@ -256,5 +256,92 @@ def calculate_confidence_score(result: str, sources: list) -> float:
 
 ### Indexing your Past Historical Conversation for Agent
 
+This indexing system allows the agent to:
+* Learn from past interactions
+* Reuse successful approaches
+* Avoid repeating mistakes
+* Provide more consistent responses
+* Build on previous knowledge
+
+Available Tools:
+ * **get_current_conversations**: Retrieves interactions from the current session
+* **search_historical_conversations:** Searches through all historical conversations
+* **get_conversation_context**: Gets formatted context from relevant conversations
+
+The complete [source code is available here](./modules/mcp_server_memory.py)
+
+1. Indexing System (MemoryStore class)
+```
+   class MemoryStore:
+       def __init__(self):
+           self.conversation_index = {}  # Stores semantic index
+```
+2. Index Creation
+
+```
+   def _create_conversation_index(self, memory: Dict) -> Dict:
+       index_entry = {
+           "query": memory.get("user_query", ""),
+           "intent": memory.get("intent", ""),
+           "final_answer": memory.get("final_answer", ""),
+           "timestamp": memory.get("timestamp", ""),
+           "tags": memory.get("tags", []),
+           "tool_calls": [
+               {
+                   "tool": call.get("tool", ""),
+                   "args": call.get("args", {}),
+                   "result": call.get("result", "")
+               }
+               for call in memory.get("tool_calls", [])
+           ]
+       }
+       return index_entry
+```
+3. Index Update Process:
+```
+   def _update_conversation_index(self):
+       all_memories = self._list_all_memories()
+       for memory in all_memories:
+           if memory.get("type") == "run_metadata":
+               session_id = memory.get("session_id", "")
+               if session_id:
+                   self.conversation_index[session_id] = self._create_conversation_index(memory)
+```
+4. Relevance Scoring:
+The system uses a weighted scoring system to find relevant conversations:
+
+```
+   # Query match: 40% weight
+   if query.lower() in conversation["query"].lower():
+       relevance_score += 0.4
+   
+   # Intent match: 30% weight
+   if query.lower() in conversation["intent"].lower():
+       relevance_score += 0.3
+   
+   # Tag match: 10% weight
+   for tag in conversation["tags"]:
+       if query.lower() in tag.lower():
+           relevance_score += 0.1
+   
+   # Tool result match: 20% weight
+   for tool_call in conversation["tool_calls"]:
+       if query.lower() in str(tool_call["result"]).lower():
+           relevance_score += 0.2
+```
+5. Context Retrieval:
+```
+   def get_conversation_context(self, query: str) -> str:
+       relevant_convs = self.get_relevant_conversations(query)
+       context = []
+       for conv in relevant_convs:
+           conversation = conv["conversation"]
+           context.append(f"Previous Query: {conversation['query']}")
+           context.append(f"Intent: {conversation['intent']}")
+           context.append(f"Answer: {conversation['final_answer']}")
+           context.append(f"Tools Used: {[call['tool'] for call in conversation['tool_calls']]}")
+           context.append("---")
+       return "\n".join(context)
+```
 ### Optimizing decision_prompt_conservative.txt
    
