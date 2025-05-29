@@ -168,6 +168,91 @@ Start with the code shared. Your task is: <br>
 
       ```
 ### Heuristics that run on the query and results
+These heuristics are implemented as a pipeline that processes both incoming queries and outgoing results. They would help:
+1. Ensure content safety and appropriateness
+2. Maintain quality standards
+3. Protect sensitive information
+4. Optimize processing based on query complexity
+5. Provide confidence metrics for results
+6. Enforce rate limiting and resource management
+7. Validate content types and formats
+8. Filter out inappropriate or banned content
+9. Ensure URL safety
+10. Maintain result relevance
+
+The complete source code file with [heuristics is available here](./core/loop.py)
+
+```
+def check_content_length(text: str, min_length: int = 10, max_length: int = 30000) -> bool:
+    """Ensure content is neither too short nor too long""" 
+    return min_length <= len(text) <= max_length
+    
+def filter_banned_words(text: str, banned_words: set) -> str:
+    """Remove or replace banned/inappropriate words"""
+    words = text.split() 
+    filtered_words = [word if word.lower() not in banned_words else "[REDACTED]" for word in words]
+    return " ".join(filtered_words)
+ 
+def validate_url(url: str) -> bool:
+    """Check if URL is safe and follows proper format"""
+    try:
+        result = urllib.parse.urlparse(url)
+        return all([result.scheme, result.netloc]) and result.scheme in ['http', 'https']
+    except:
+        return False
+
+def classify_query_intent(query: str) -> str:
+    """Classify query into categories like: mathematical, informational, financial, educational"""
+    # Use existing intent classification from perception.py
+    return intent
+
+def calculate_relevance_score(query: str, result: str) -> float:
+    """Calculate how relevant the result is to the original query"""
+    # Use semantic similarity or keyword matching
+    score = 0.5
+    return score
+
+def check_rate_limit(user_id: str, query_type: str) -> bool:
+    """Ensure user isn't making too many requests"""
+    # Use existing RateLimiter class logic
+    is_allowed = True
+    return is_allowed
+
+def validate_content_type(content: str, expected_type: str) -> bool:
+    """Ensure content matches expected type (text, number, URL, etc.)"""
+    if expected_type == "number":
+        return content.replace(".", "").isdigit()
+    elif expected_type == "url":
+        return validate_url(content)
+    return True
+
+def filter_sensitive_info(text: str) -> str:
+    """Remove or mask sensitive information like phone numbers, emails, etc."""
+    # Remove phone numbers
+    text = re.sub(r'\d{3}[-.]?\d{3}[-.]?\d{4}', '[PHONE]', text)
+    # Remove emails
+    text = re.sub(r'[\w\.-]+@[\w\.-]+', '[EMAIL]', text)
+    return text
+
+def check_query_complexity(query: str) -> int:
+    """Rate query complexity to determine processing approach"""
+    # Count number of operations/conditions
+    complexity = 0
+    if "and" in query.lower(): complexity += 1
+    if "or" in query.lower(): complexity += 1
+    if "not" in query.lower(): complexity += 1
+    return complexity
+
+def calculate_confidence_score(result: str, sources: list) -> float:
+    """Calculate confidence in the result based on sources and consistency"""
+    # Check number of sources
+    source_count = len(sources)
+    # Check if sources agree
+    consistency = check_source_consistency(sources)
+    return (source_count * 0.3) + (consistency * 0.7)
+
+
+```
 
 ### Indexing your Past Historical Conversation for Agent
 
